@@ -1,4 +1,4 @@
-#Pillar art gallery
+# Pillar art gallery
 
 
 ## An art gallery application: prop up your art career with our virtual gallery! Put it on the pillar!
@@ -12,11 +12,11 @@
 - Jose Faburrieta
 
 
-##Description:
+## Description:
 
 Pillar is a virtual art gallery space where artists can view each-other’s work and upload their own works to be viewed in a portfolio as well as a gallery/pillar view. 
 
-##User story:
+## User story:
 
 - As an artist I want a virtual gallery space where my work can be viewed in a user friendly and intuitive space.
 
