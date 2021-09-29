@@ -1,2 +1,25 @@
-# pillarArtApplication
-Pillar, art app, prop up your art career with our virtual gallery! P̀ͭ҉̯̙̳̫̤͇U̧͎͇̪͉͙̯͔̗͋͋ͤT͔̈́̒̏̏͞ͅ ͍͈̟̦̤͇͖̾͛̽́Ḭ̡̬͈̮͉͍͍ͮͣͅŤ̷͇̳ͦ̅̏ ̢̥͕̼̩̌͆͌O̪̤͙̘̔ͣ͘ͅͅN͐͏͈̦̜̘ ̵͓̖̽̅̃̅T̴̪̻̟͓̭̪̋Ḩ̣͚̲̇ͬ̋̉E̜̪̝̗̜̪͇ͥ̂͢ ̟͙̤̉͟P̙͚̹͚̟̬̿̃ͮͮ̕Í̵̗͙̩͖̲͊L͂̀̔̓҉̫̣̞̪̖͈̮ͅL̤͚̏͢Ã̡̝̼͖̲͈ͨ̏Ṙ̨̘͕̬̲͍͇̠̓
+#Pillar art gallery
+## An art gallery application: prop up your art career with our virtual gallery! P̀ͭ҉̯̙̳̫̤͇U̧͎͇̪͉͙̯͔̗͋͋ͤT͔̈́̒̏̏͞ͅ ͍͈̟̦̤͇͖̾͛̽́Ḭ̡̬͈̮͉͍͍ͮͣͅŤ̷͇̳ͦ̅̏ ̢̥͕̼̩̌͆͌O̪̤͙̘̔ͣ͘ͅͅN͐͏͈̦̜̘ ̵͓̖̽̅̃̅T̴̪̻̟͓̭̪̋Ḩ̣͚̲̇ͬ̋̉E̜̪̝̗̜̪͇ͥ̂͢ ̟͙̤̉͟P̙͚̹͚̟̬̿̃ͮͮ̕Í̵̗͙̩͖̲͊L͂̀̔̓҉̫̣̞̪̖͈̮ͅL̤͚̏͢Ã̡̝̼͖̲͈ͨ̏Ṙ̨̘͕̬̲͍͇̠̓
+
+- Collaborators:
+- Kris Terran Baily
+- Miguel Davila
+- Tyler Everett
+- Jose Faburrieta
+
+
+##Description:
+
+Pillar is a virtual art gallery space where artists can view each-other’s work and upload their own works to be viewed in a portfolio as well as a gallery/pillar view. 
+
+##User story:
+
+- As an artist I want a virtual gallery space where my work can be viewed in a user friendly and intuitive space.
+
+- As an artist I want the ability to upload and add descriptions to works of art. Through a profile view.
+
+- As an artist I want my works of art to be gathered in a portfolio view to organise and share.
+
+- As an artist I want my art-work to be P̡̙̙̖̖̼̭͚͆ͣU̠̪̻̖͙͗ͪ̍̊͟T̴̜̠̝ͥ̐̈ ̧̜̯ͭ̇͌̚O̡̟̰͕͔̬͉͛̾N̟̭̲̤̋̾̚̕ ̵͖̞ͮT̯͉̥̘̲̱̘̓̊̔ͯ͡Ḩ̺͎̣̦̦̈ͅĒ̬̫̉͢ ̪͕͍̩͔̠̊̍̀͟P̨̹̼̻ͯ̂ͯͬI̬͙͖͈͉͉ͣ̔̑͞L̩̲̙̙̬̳̹̄͡ͅL̶͚͚̝̇͛ͬA̵̪͍̪̞̖̟ͮ͌R̸͓̬͈̞ͮo and be viewable by other artists and prospective fans/buyers.
+
+- As an artist I want the ability to view others works of art and view their own portfolio collections.
