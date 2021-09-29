@@ -24,6 +24,6 @@ Pillar is a virtual art gallery space where artists can view each-other’s work
 
 - As an artist I want my works of art to be gathered in a portfolio view to organise and share.
 
-- As an artist I want my art-work to be P̡̙̙̖̖̼̭͚͆ͣU̠̪̻̖͙͗ͪ̍̊͟T̴̜̠̝ͥ̐̈ ̧̜̯ͭ̇͌̚O̡̟̰͕͔̬͉͛̾N̟̭̲̤̋̾̚̕ ̵͖̞ͮT̯͉̥̘̲̱̘̓̊̔ͯ͡Ḩ̺͎̣̦̦̈ͅĒ̬̫̉͢ ̪͕͍̩͔̠̊̍̀͟P̨̹̼̻ͯ̂ͯͬI̬͙͖͈͉͉ͣ̔̑͞L̩̲̙̙̬̳̹̄͡ͅL̶͚͚̝̇͛ͬA̵̪͍̪̞̖̟ͮ͌R̸͓̬͈̞ͮo and be viewable by other artists and prospective fans/buyers.
+- As an artist I want my art-work to be put on the pillar and be viewable by other artists and prospective fans/buyers.
 
 - As an artist I want the ability to view others works of art and view their own portfolio collections.
