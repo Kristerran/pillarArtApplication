@@ -1,0 +1,28 @@
+{
+  "name": "pillarArtApplication",
+  "version": "1.0.0",
+  "description": "- Collaborators:\r - Kris Terran Baily\r - Miguel Davila\r - Tyler Everett\r - Jose Faburrieta",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "handlebars": "^4.7.7",
+    "run": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kristerran/pillarArtApplication.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kristerran/pillarArtApplication/issues"
+  },
+  "homepage": "https://github.com/Kristerran/pillarArtApplication#readme"
+}
