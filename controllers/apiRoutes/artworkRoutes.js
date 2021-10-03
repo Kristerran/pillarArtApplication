@@ -1,6 +1,17 @@
 const router = require('express').Router();
 const { Artwork } = require('../../models');
+const {Image} = require('../../models')
 
+router.get('/images', async (req, res) => {
+    try {
+      const imageData = await Image.findAll({
+      });
+      res.status(200).json(imageData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+  
 router.post('/', async (req, res) => {
   try {
     const newArtwork = await Artwork.create({

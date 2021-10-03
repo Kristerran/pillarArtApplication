@@ -16,11 +16,11 @@ Artwork.init(
       allowNull: true,
     },
     image: {
-      type: DataTypes.BLOB
+      type: DataTypes.BLOB("long")
     },
     signature: {
-      type: DataTypes.BLOB
-    }
+      type: DataTypes.BLOB("long"),
+    },
     artist: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -35,7 +35,7 @@ Artwork.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "artwork",
+    modelName: "Artwork",
   }
 ),
 module.exports = Artwork;
