@@ -11,19 +11,30 @@ Artwork.init(
       autoIncrement: true,
       primaryKey: true,
     },
+    type: {
+      type: DataTypes.STRING,
+    },
+    name: {
+      type: DataTypes.STRING,
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    image: {
-      type: DataTypes.BLOB("long")
+    about: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
-    signature: {
+    data: {
       type: DataTypes.BLOB("long"),
+    },
+    signature_data: {
+      type: DataTypes.BLOB("long"),
+      allowNull: true,
     },
     artist: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: "Artist",
         key: "id",
