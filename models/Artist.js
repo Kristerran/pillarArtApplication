@@ -31,6 +31,8 @@ Artist.init(
                 len: [8],
             },
         },
+    },
+    {
         hooks: {
             beforeCreate: async (data) => {
                 data.password = await bcrypt.hash(data.password, 10);
@@ -41,8 +43,8 @@ Artist.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "user",
-    },
-);
+        modelName: "Artist",
+    }
+),
 
-module.exports = Artist
+    module.exports = Artist
