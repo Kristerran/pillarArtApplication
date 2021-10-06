@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Artist, Artwork } = require('../models');
 
-// GET all galleries for homepage
+// GET Pillar
 router.get('/', async (req, res) => {
   try {
     res.render('homeOfThePillar');
@@ -10,58 +10,33 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+// Get Upload Page
+router.get('/upload', async (req, res) => {
+  try {
+    res.render('upload');
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
-// // GET one gallery
-// router.get('/gallery/:id', async (req, res) => {
-//   try {
-//     const dbGalleryData = await Gallery.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: Painting,
-//           attributes: [
-//             'id',
-//             'title',
-//             'artist',
-//             'exhibition_date',
-//             'filename',
-//             'description',
-//           ],
-//         },
-//       ],
-//     });
+// Get Login Page
+router.get('/login', async (req, res) => {
+  try {
+    res.render('login');
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
-//     const gallery = dbGalleryData.get({ plain: true });
-//     // Send over the 'loggedIn' session variable to the 'gallery' template
-//     res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
-// // GET one painting
-// router.get('/painting/:id', async (req, res) => {
-//   try {
-//     const dbPaintingData = await Painting.findByPk(req.params.id);
-
-//     const painting = dbPaintingData.get({ plain: true });
-//     // Send over the 'loggedIn' session variable to the 'homepage' template
-//     res.render('painting', { painting, loggedIn: req.session.loggedIn });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
-// // Login route
-// router.get('/login', (req, res) => {
-//   // If the user is already logged in, redirect to the homepage
-//   if (req.session.loggedIn) {
-//     res.redirect('/');
-//     return;
-//   }
-//   // Otherwise, render the 'login' template
-//   res.render('login');
-// });
-
+// Get User Pillar
+router.get('/User/:id', async (req, res) => {
+  try {
+    res.render('userPillar');
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
  module.exports = router;
