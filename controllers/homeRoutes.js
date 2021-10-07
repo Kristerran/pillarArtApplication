@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     let imageUrls = {}
     for (let i = 0; i < artworkNames.length; i++) {
       let imageName = artworkNames[i].name;
-      let filePath = '../public/tmp/'
+      let filePath = 'http://localhost:3001/tmp/'
       imageUrls[i] = filePath += imageName
     }
     let imageJson = JSON.stringify(imageUrls) 

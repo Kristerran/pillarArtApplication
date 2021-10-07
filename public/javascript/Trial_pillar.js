@@ -1,7 +1,10 @@
-const images = Object.values(JSON.parse($('#imageUrls').text()))
+
+ const images = Object.values(JSON.parse($('#imageUrls').text()))
 
 console.log(images)
-var total = length;
+
+
+var total = images.length;
 var imageIdecies = new Array(total);
 console.log(imageIdecies);
 for (let i = 0; i < total; i++)
