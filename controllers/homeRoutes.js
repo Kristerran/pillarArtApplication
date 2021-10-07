@@ -23,11 +23,16 @@ router.get('/upload', async (req, res) => {
 // Get Login Page
 router.get('/login', async (req, res) => {
   try {
-    res.render('login');
+    const { artist } = req.session;
+    res.render('login', {artist});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+router.get("/register", (req, res) => {
+  res.render("register");
 });
 
 // Get User Pillar

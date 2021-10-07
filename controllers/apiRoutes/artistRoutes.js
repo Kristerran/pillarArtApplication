@@ -18,12 +18,12 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    const artistData = await Artist.findOne({ where: { email: req.body.email } });
+    const artistData = await Artist.findOne({ where: { username: req.body.username } });
 
     if (!artistData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect user or password, please try again' });
       return;
     }
 
@@ -32,12 +32,12 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect user or password, please try again' });
       return;
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.artist_id = artistData.id;
       req.session.logged_in = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
@@ -58,4 +58,13 @@ router.post('/logout', (req, res) => {
   }
 });
 
+router.post("/register", async (req, res) => {
+  try {
+    const artist = await Artist.create(req.body);
+    console.log(artist);
+    res.redirect("/register");
+  } catch (err) {
+    console.log(err);
+  }
+});
 module.exports = router;

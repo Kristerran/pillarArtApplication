@@ -1,5 +1,5 @@
 const startCarousel = async() => {
-
+  //Get all user images
   const getImages = async() => {
     let imageUrls
     let imageData = await fetch('/api/artwork/imageurls',
@@ -12,9 +12,27 @@ const startCarousel = async() => {
     (data => {imageUrls = Object.values(data)})
     return imageUrls
   }
-  
-   images = await getImages()
-   console.log(images)
+  // // Get all api images
+  // const getApiImages = async() => {
+  //   let imageUrls
+  //   let imageData = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects')
+  //   .then
+  //   (response => response.json())
+  //   .then
+  //   (data => console.log(data))
+  //   return imageUrls
+  // }
+
+  //  imageSourceOne = await getImages()
+  //  imageSourceTwoObj = await getApiImages()
+  //  imageSourceTwo = Object.values(imageSourceTwoObj)
+  //  console.log(imageSourceOne)
+  //  console.log(imageSourceTwo)
+
+   const images = await getImages()
+  //  images += imageSourceOne
+  //  images += imageSourceTwo
+  //   console.log(images)
   
   
   var total = images.length;
