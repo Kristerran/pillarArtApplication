@@ -17,11 +17,14 @@ Artwork.init(
     name: {
       type: DataTypes.STRING,
     },
+    path: {
+      type: DataTypes.STRING
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    about: {
+    description: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -32,7 +35,7 @@ Artwork.init(
       type: DataTypes.BLOB("long"),
       allowNull: true,
     },
-    artist: {
+    artist_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
