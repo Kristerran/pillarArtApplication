@@ -5,13 +5,32 @@ const upload = require("../../middleware/upload");
 
 router.get('/', async (req, res) => {
     try {
-      const imageData = await Artwork.findAll({
+      const artworkData = await Artwork.findAll({
       });
-      res.status(200).json(imageData);
+      res.status(200).json(artworkData);
     } catch (err) {
       res.status(500).json(err);
     }
   });
+
+  router.get('/imageUrls', async (req, res) => {
+    try {
+      const artworkNames = await Artwork.findAll({
+        attributes: ['name'],
+        raw: true
+      });
+      let imageUrls = {}
+      for (let i = 0; i < artworkNames.length; i++) {
+        let imageName = artworkNames[i].name;
+        let filePath = '../public/tmp/'
+        imageUrls[i] = filePath += imageName
+      }
+      res.status(200).json(imageUrls);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  })
+
   router.get('/:id', async (req, res) => {
     try {
       const artworkData = await Artwork.findByPk(req.params.id, {

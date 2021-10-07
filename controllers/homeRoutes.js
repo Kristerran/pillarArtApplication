@@ -4,7 +4,21 @@ const { Artist, Artwork } = require('../models');
 // GET Pillar
 router.get('/', async (req, res) => {
   try {
-    res.render('homeOfThePillar');
+    const artworkNames = await Artwork.findAll({
+      attributes: ['name'],
+      raw: true
+    });
+    let imageUrls = {}
+    for (let i = 0; i < artworkNames.length; i++) {
+      let imageName = artworkNames[i].name;
+      let filePath = '../public/tmp/'
+      imageUrls[i] = filePath += imageName
+    }
+    let imageJson = JSON.stringify(imageUrls) 
+    res.render('homeOfThePillar', {
+      imageJson
+      // loggedIn: req.session.loggedIn
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
