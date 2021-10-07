@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
       let imageUrls = {}
       for (let i = 0; i < artworkNames.length; i++) {
         let imageName = artworkNames[i].name;
-        let filePath = '../public/tmp/'
+        let filePath = '../tmp/'
         imageUrls[i] = filePath += imageName
       }
       res.status(200).json(imageUrls);
