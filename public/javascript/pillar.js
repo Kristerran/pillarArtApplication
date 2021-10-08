@@ -1,9 +1,38 @@
-
- const images = Object.values(JSON.parse($('#imageUrls').text()))
+const images = 
+[
+         "https://media.giphy.com/media/aFTt8wvDtqKCQ/giphy.gif",
+         "https://media.giphy.com/media/IcifS1qG3YFlS/giphy.gif",
+         "https://media.giphy.com/media/2nrr1SrkVEdpK/giphy.gif",
+         "https://media.giphy.com/media/10qHEa7ShsJ8I0/giphy.gif",
+         "https://media.giphy.com/media/eCGTfFtjcp928/giphy.gif",
+         "https://media.giphy.com/media/ErZ8hv5eO92JW/giphy.gif",
+         "https://media.giphy.com/media/UZpw1AwQhPsHK/giphy.gif",
+         "https://media.giphy.com/media/12XsHmJxR5c8QU/giphy.gif",
+         "https://media.giphy.com/media/JCakjZnyrPeYE/giphy.gif",
+         "https://media.giphy.com/media/dCFptKvuhxaZa/giphy.gif",
+         "https://media.giphy.com/media/QxZQ7dSV4j6GQ/giphy.gif",
+         "https://media.giphy.com/media/7Uj0tJ6r2CeOs/giphy.gif",
+         "https://media.giphy.com/media/12LwwLbyMZ0LqE/giphy.gif",
+         "https://media.giphy.com/media/KbqNVz8IGddRYPFOfl/giphy.gif",
+         "https://media.giphy.com/media/yU6hCIV6clBSOj3Q1Y/giphy.gif",
+         "https://media.giphy.com/media/xUOxf8EQfGMcxgo7w4/giphy.gif",
+         "https://media.giphy.com/media/3o6nV3whKsbIIcZ0FW/giphy.gif",
+         "https://media.giphy.com/media/NsBeF6OlZuermZUv9u/giphy.gif",  
+         "https://media.giphy.com/media/13p77tfexyLtx6/giphy.gif",
+         "https://media.giphy.com/media/Gp32KJtqe08Lu/giphy.gif",
+         "https://media.giphy.com/media/7TdN6y8lUl5Qs/giphy.gif",
+         "https://media.giphy.com/media/1jy3pev2Eu5Ve/giphy.gif",
+         "https://media.giphy.com/media/nEXmNl3uha5YA/giphy.gif",
+         "https://media.giphy.com/media/N35rW3vRNeaDC/giphy.gif",
+         "https://media.giphy.com/media/lFmmcqA4VBhMQ/giphy.gif",
+         "https://media.giphy.com/media/kMkTJV4a32ba8/giphy.gif",
+         "https://media.giphy.com/media/12J6nIC1FJ7i00/giphy.gif",
+         "https://media.giphy.com/media/7JsQ5EQTZlgHe/giphy.gif",
+         "https://media.giphy.com/media/uG3lKkAuh53wc/giphy.gif",
+         "https://media.giphy.com/media/BSx6mzbW1ew7K/giphy.gif"
+];
 
 console.log(images)
-
-
 var total = images.length;
 var imageIdecies = new Array(total);
 console.log(imageIdecies);
@@ -18,7 +47,8 @@ console.log(currentSet);
 
 
 var carousel = document.querySelector('.carousel');
-var cells = document.querySelectorAll(".carousel__cell");
+var cells = document.querySelectorAll(".image_container");
+console.log(cells);
 
 var cellCount = 9;
 var rotationIndex = 0;
@@ -27,7 +57,11 @@ var prevImage = 29;
 var imageIndex = 0;
 var nexImaget = 1;
 
-resetStyles();
+var buttonBox = document.querySelector('.buttons_box');
+
+
+
+//resetStyles();
 populateCells();
 
 function rotateCarousel() {
@@ -35,8 +69,9 @@ function rotateCarousel() {
   carousel.style.transform = 'translateZ(-866px) rotateY(' + angle + 'deg)';
 }
 
-var prevButton = document.querySelector('.previous-button');
+var  prevButton = document.querySelector('.previous-button');
 prevButton.addEventListener( 'click', function() {
+  buttonBox.style.opacity = .4
   rotationIndex--;
   swapPositionsBkwd();
   swapIndexBkwd();
@@ -44,11 +79,14 @@ prevButton.addEventListener( 'click', function() {
   resetStyles();
   resetIndecies();
   swapPrevious();
-  console.log(cells);
-});
+  console.log(cells);  
+  setTimeout(() => {buttonBox.style.opacity = 1;}, 700);
+
+ } );
 
 var nextButton = document.querySelector('.next-button');
 nextButton.addEventListener( 'click', function() {
+  buttonBox.style.opacity = .4;
   rotationIndex++;
   swapPositionsFwd();
   swapIndexFwd();
@@ -57,6 +95,7 @@ nextButton.addEventListener( 'click', function() {
   resetIndecies()
   console.log(cells);
   swapNext();
+  setTimeout(() => {buttonBox.style.opacity = 1;},700);
 });
 
 
@@ -98,26 +137,26 @@ function resetStyles()
     switch(cells[i].dataset.placement)
       {
         case "upfront":
-          cells[i].style.opacity = 1;
-          cells[i].style.filter = "brightness(1)";
+          cells[i].parentElement.style.opacity = 1;
+          cells[i].parentElement.style.filter = "brightness(1)";
           break;
         case "front":
-          cells[i].style.opacity = 1;
-          cells[i].style.filter = "brightness(.5)";
+          cells[i].parentElement.style.opacity = 1;
+          cells[i].parentElement.style.filter = "brightness(.5)";
           break;
         case "backL":
-          cells[i].style.opacity = 0;
-          cells[i].style.filter = "brightness(0)";
+          cells[i].parentElement.style.opacity = 1;
+          cells[i].parentElement.style.filter = "brightness(0)";
           cells[i].classList.add("reset");
           break;
         case "backR":
-          cells[i].style.opacity = 0;
-          cells[i].style.filter = "brightness(0)";
+          cells[i].parentElement.style.opacity = 1;
+          cells[i].parentElement.style.filter = "brightness(0)";
           cells[i].classList.add("reset");
           break;
         default:
-          cells[i].style.opacity = 0;
-          cells[i].style.filter = "brightness(0)";
+          cells[i].parentElement.style.opacity = 0;
+          cells[i].parentElement.style.filter = "brightness(0)";
           break;
       }
   }
@@ -165,6 +204,7 @@ function populateCells()
   for ( i = 0; i < cellCount; i++)
   {
     var current = document.createElement('img');
+    current.width = "371"
     current.src = images[currentSet[i]];
     cells[i].appendChild(current);
   }
@@ -191,4 +231,3 @@ function swapNext()
   console.log(currentImg);
   currentImg[0].src = images[currentSet[4]];
 }
-

@@ -65,7 +65,7 @@ router.get('/', async (req, res) => {
         name: req.file.originalname,
         // title: req.body.title,
         data: fs.readFileSync(
-          "C:/Users/krist/pillarArtApplication/public/uploads/" + req.file.filename
+          "C:/Users/Tony/CodingBootcamp/Projects/Project_2/Pillar_Direct_Copy/pillarArtApplication/public/uploads/" + req.file.filename
         ),
         // signature_data: fs.readFileSync(
         //   "C:/Users/krist/pillarArtApplication/public/uploads/" + req.file.filename
@@ -74,7 +74,7 @@ router.get('/', async (req, res) => {
         
       }).then((artwork) => {
         fs.writeFileSync(
-          "C:/Users/krist/pillarArtApplication/public/tmp/" + artwork.name,
+          "C:/Users/Tony/CodingBootcamp/Projects/Project_2/Pillar_Direct_Copy/pillarArtApplication/public/tmp/" + artwork.name,
           artwork.data
         );
   
