@@ -1,6 +1,15 @@
 const router = require('express').Router();
 const { Artist } = require('../../models');
 
+router.get('/', async (req, res) => {
+  try {
+    const artist = await Artist.findAll({
+    });
+    res.status(200).json(artistData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 router.post('/', async (req, res) => {
   try {
     const artistData = await Artist.create(req.body);

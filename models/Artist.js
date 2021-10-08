@@ -29,6 +29,7 @@ Artist.init(
             },
             bio: {
                 type: DataTypes.TEXT,
+                allowNull: true
             },
             validate: {
                 len: [8],
