@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pillar Art Gallery</title>
+<<<<<<< HEAD
+</head>
+
+<body>
+  <div class="flex-column justify-space-around">
+    <header class="display-flex justify-space-between align-center p-2">
+      <h1>
+        PILLAR
+      </h1>
+      <nav>
+        <ul>
+          {{#unless user}}
+          <li><a href="/login">Login</a></li>
+          {{else}}
+          <li><a href="/logout">Logout</a></li>
+          {{/unless}}
+        </ul>
+      </nav>
+    </header>
+      <main class="container container-fluid mt-5">
+        {{{ body }}}
+      </main>
+  </div>
+  </body>
+=======
   <link rel = "stylesheet" href="http://localhost:3001/css/main_template.css">
   <link rel = "stylesheet" href="http://localhost:3001/css/pillar.css">
   
@@ -28,5 +49,6 @@
      
   </div>
 </body>
+>>>>>>> a8f0bff74556d512deaec72bb38ef567875bbeb9
 
 </html>

@@ -15,15 +15,14 @@ router.get('/', async (req, res) => {
 
   router.get('/imageUrls', async (req, res) => {
     try {
-      const artworkNames = await Artwork.findAll({
-        attributes: ['name'],
+      const artworkPaths = await Artwork.findAll({
+        attributes: ['path'],
         raw: true
       });
       let imageUrls = {}
-      for (let i = 0; i < artworkNames.length; i++) {
-        let imageName = artworkNames[i].name;
-        let filePath = '../public/tmp/'
-        imageUrls[i] = filePath += imageName
+      for (let i = 0; i < artworkPaths.length; i++) {
+        let filePath = artworkPaths[i].path
+        imageUrls[i] = filePath
       }
       res.status(200).json(imageUrls);
     } catch (err) {
@@ -63,18 +62,20 @@ router.get('/', async (req, res) => {
       Artwork.create({
         type: req.file.mimetype,
         name: req.file.originalname,
-        // title: req.body.title,
+        path: './uploads/' + req.file.filename,
+        title: req.body.title,
+        description: req.body.description,
         data: fs.readFileSync(
-          "C:/Users/Tony/CodingBootcamp/Projects/Project_2/Pillar_Direct_Copy/pillarArtApplication/public/uploads/" + req.file.filename
+          process.cwd() + '/public/uploads/'+ req.file.filename
         ),
         // signature_data: fs.readFileSync(
         //   "C:/Users/krist/pillarArtApplication/public/uploads/" + req.file.filename
         // ),
-        // artist: req.session.artist_id,
+         artist_id: req.session.artist_id,
         
       }).then((artwork) => {
         fs.writeFileSync(
-          "C:/Users/Tony/CodingBootcamp/Projects/Project_2/Pillar_Direct_Copy/pillarArtApplication/public/tmp/" + artwork.name,
+          process.cwd() + '/public/tmp/' + artwork.name,
           artwork.data
         );
   

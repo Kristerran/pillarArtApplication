@@ -4,21 +4,7 @@ const { Artist, Artwork } = require('../models');
 // GET Pillar
 router.get('/', async (req, res) => {
   try {
-    const artworkNames = await Artwork.findAll({
-      attributes: ['name'],
-      raw: true
-    });
-    let imageUrls = {}
-    for (let i = 0; i < artworkNames.length; i++) {
-      let imageName = artworkNames[i].name;
-      let filePath = 'http://localhost:3001/tmp/'
-      imageUrls[i] = filePath += imageName
-    }
-    let imageJson = JSON.stringify(imageUrls) 
-    res.render('homeOfThePillar', {
-      imageJson
-      // loggedIn: req.session.loggedIn
-    });
+    res.render('homeOfThePillar', {user: req.session.logged_in});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -37,11 +23,16 @@ router.get('/upload', async (req, res) => {
 // Get Login Page
 router.get('/login', async (req, res) => {
   try {
-    res.render('login');
+    const { artist } = req.session;
+    res.render('login', {artist});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+router.get("/register", (req, res) => {
+  res.render("register");
 });
 
 // Get User Pillar
