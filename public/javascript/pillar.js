@@ -32,6 +32,7 @@ const images =
          "https://media.giphy.com/media/BSx6mzbW1ew7K/giphy.gif"
 ];
 
+console.log(images)
 var total = images.length;
 var imageIdecies = new Array(total);
 console.log(imageIdecies);
@@ -46,7 +47,8 @@ console.log(currentSet);
 
 
 var carousel = document.querySelector('.carousel');
-var cells = document.querySelectorAll(".carousel__cell");
+var cells = document.querySelectorAll(".image_container");
+console.log(cells);
 
 var cellCount = 9;
 var rotationIndex = 0;
@@ -55,7 +57,11 @@ var prevImage = 29;
 var imageIndex = 0;
 var nexImaget = 1;
 
-resetStyles();
+var buttonBox = document.querySelector('.buttons_box');
+
+
+
+//resetStyles();
 populateCells();
 
 function rotateCarousel() {
@@ -63,8 +69,9 @@ function rotateCarousel() {
   carousel.style.transform = 'translateZ(-866px) rotateY(' + angle + 'deg)';
 }
 
-var prevButton = document.querySelector('.previous-button');
+var  prevButton = document.querySelector('.previous-button');
 prevButton.addEventListener( 'click', function() {
+  buttonBox.style.opacity = .4
   rotationIndex--;
   swapPositionsBkwd();
   swapIndexBkwd();
@@ -72,11 +79,14 @@ prevButton.addEventListener( 'click', function() {
   resetStyles();
   resetIndecies();
   swapPrevious();
-  console.log(cells);
-});
+  console.log(cells);  
+  setTimeout(() => {buttonBox.style.opacity = 1;}, 700);
+
+ } );
 
 var nextButton = document.querySelector('.next-button');
 nextButton.addEventListener( 'click', function() {
+  buttonBox.style.opacity = .4;
   rotationIndex++;
   swapPositionsFwd();
   swapIndexFwd();
@@ -85,6 +95,7 @@ nextButton.addEventListener( 'click', function() {
   resetIndecies()
   console.log(cells);
   swapNext();
+  setTimeout(() => {buttonBox.style.opacity = 1;},700);
 });
 
 
@@ -126,26 +137,26 @@ function resetStyles()
     switch(cells[i].dataset.placement)
       {
         case "upfront":
-          cells[i].style.opacity = 1;
-          cells[i].style.filter = "brightness(1)";
+          cells[i].parentElement.style.opacity = 1;
+          cells[i].parentElement.style.filter = "brightness(1)";
           break;
         case "front":
-          cells[i].style.opacity = 1;
-          cells[i].style.filter = "brightness(.5)";
+          cells[i].parentElement.style.opacity = 1;
+          cells[i].parentElement.style.filter = "brightness(.5)";
           break;
         case "backL":
-          cells[i].style.opacity = 0;
-          cells[i].style.filter = "brightness(0)";
+          cells[i].parentElement.style.opacity = 1;
+          cells[i].parentElement.style.filter = "brightness(0)";
           cells[i].classList.add("reset");
           break;
         case "backR":
-          cells[i].style.opacity = 0;
-          cells[i].style.filter = "brightness(0)";
+          cells[i].parentElement.style.opacity = 1;
+          cells[i].parentElement.style.filter = "brightness(0)";
           cells[i].classList.add("reset");
           break;
         default:
-          cells[i].style.opacity = 0;
-          cells[i].style.filter = "brightness(0)";
+          cells[i].parentElement.style.opacity = 0;
+          cells[i].parentElement.style.filter = "brightness(0)";
           break;
       }
   }
@@ -193,6 +204,7 @@ function populateCells()
   for ( i = 0; i < cellCount; i++)
   {
     var current = document.createElement('img');
+    current.width = "371"
     current.src = images[currentSet[i]];
     cells[i].appendChild(current);
   }
@@ -219,4 +231,3 @@ function swapNext()
   console.log(currentImg);
   currentImg[0].src = images[currentSet[4]];
 }
-

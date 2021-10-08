@@ -5,13 +5,32 @@ const upload = require("../../middleware/upload");
 
 router.get('/', async (req, res) => {
     try {
-      const imageData = await Artwork.findAll({
+      const artworkData = await Artwork.findAll({
       });
-      res.status(200).json(imageData);
+      res.status(200).json(artworkData);
     } catch (err) {
       res.status(500).json(err);
     }
   });
+
+  router.get('/imageUrls', async (req, res) => {
+    try {
+      const artworkNames = await Artwork.findAll({
+        attributes: ['name'],
+        raw: true
+      });
+      let imageUrls = {}
+      for (let i = 0; i < artworkNames.length; i++) {
+        let imageName = artworkNames[i].name;
+        let filePath = '../public/tmp/'
+        imageUrls[i] = filePath += imageName
+      }
+      res.status(200).json(imageUrls);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  })
+
   router.get('/:id', async (req, res) => {
     try {
       const artworkData = await Artwork.findByPk(req.params.id, {
@@ -46,7 +65,7 @@ router.get('/', async (req, res) => {
         name: req.file.originalname,
         // title: req.body.title,
         data: fs.readFileSync(
-          "C:/Users/krist/pillarArtApplication/public/uploads/" + req.file.filename
+          "C:/Users/Tony/CodingBootcamp/Projects/Project_2/Pillar_Direct_Copy/pillarArtApplication/public/uploads/" + req.file.filename
         ),
         // signature_data: fs.readFileSync(
         //   "C:/Users/krist/pillarArtApplication/public/uploads/" + req.file.filename
@@ -55,7 +74,7 @@ router.get('/', async (req, res) => {
         
       }).then((artwork) => {
         fs.writeFileSync(
-          "C:/Users/krist/pillarArtApplication/public/tmp/" + artwork.name,
+          "C:/Users/Tony/CodingBootcamp/Projects/Project_2/Pillar_Direct_Copy/pillarArtApplication/public/tmp/" + artwork.name,
           artwork.data
         );
   

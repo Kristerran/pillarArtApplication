@@ -1,0 +1,47 @@
+.template_frame
+{
+    display:flex;
+    justify-content: space-between;
+    max-width: 1920px;
+    max-height: 1350px;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    border: 5px solid black;
+}
+
+.left_frame_bar
+{
+    color: white;
+    width: 10px;
+    height:100%;
+    background: 0;
+    display: flex;
+    justify-content: space-between;
+    
+
+    border-left: 150px solid #32557f;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid transparent;
+}
+
+
+body
+{
+    margin: auto;
+    width:auto;
+}
+
+.right_frame_bar
+{
+    width: 10px;
+    height:100%;
+    background-color: skyblue;
+    display: flex;
+    justify-content: space-between;
+    
+
+    border-right: 150px solid #32557f;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid transparent;
+}
