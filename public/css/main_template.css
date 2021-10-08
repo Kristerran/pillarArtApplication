@@ -1,47 +1,86 @@
 .template_frame
 {
-    display:flex;
-    justify-content: space-between;
-    max-width: 1920px;
-    max-height: 1350px;
+    margin: 0 auto;
+    max-width: 1820px;
+    max-height: 910px;
     width: 100vw;
-    height: 100vh;
-    margin: auto;
-    border: 5px solid black;
+    height: 910px ;
+    border: 5px solid skyblue;
+}
+
+.roof_marker
+{
+    position: absolute;
+    width: 1820px;
+    height: 150px;
+    background-color: cornsilk;
+    border: 5px solid cornsilk;
+}
+
+.floor_marker
+{
+    height: 150px;
+    margin-top: 770px;
+    position: absolute;
+    width: 1820px;
+    background-color: bisque;
+    border: 5px solid bisque;
+}
+
+.center
+{
+    border: 10px solid black;
+    position: absolute;
+    width: 1820px;
+    background: gray 0.2;
+    display: flex;
+    justify-content: space-between;
 }
 
 .left_frame_bar
 {
-    color: white;
-    width: 10px;
-    height:100%;
+    width: 0px;
+    height:610px;
     background: 0;
     display: flex;
     justify-content: space-between;
-    
-
-    border-left: 150px solid #32557f;
-    border-top: 100px solid transparent;
-    border-bottom: 100px solid transparent;
+    border-left: 300px solid black;
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid transparent;
 }
 
-
-body
+.focus
 {
-    margin: auto;
-    width:auto;
+    z-index: 1000;
+    align-self: center;
 }
 
 .right_frame_bar
 {
-    width: 10px;
-    height:100%;
-    background-color: skyblue;
+    width: 0px;
+    height:610px;
+    background: 0;
     display: flex;
     justify-content: space-between;
-    
-
-    border-right: 150px solid #32557f;
-    border-top: 100px solid transparent;
-    border-bottom: 100px solid transparent;
+    border-right: 300px solid teal;
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid transparent;
 }
+
+
+
+
+
+.upload_container
+{
+    height: 350px;
+    border-radius: 20px;
+    border: 5px solid black;
+    align-self: center;
+    width: 500px;
+}
+
+
+
+
+

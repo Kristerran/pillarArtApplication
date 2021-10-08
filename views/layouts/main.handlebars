@@ -1,54 +1,32 @@
 <head>
   <meta charset="UTF-8">
-  <title>Pillar Art Gallery</title>
-<<<<<<< HEAD
-</head>
-
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        PILLAR
-      </h1>
-      <nav>
-        <ul>
-          {{#unless user}}
-          <li><a href="/login">Login</a></li>
-          {{else}}
-          <li><a href="/logout">Logout</a></li>
-          {{/unless}}
-        </ul>
-      </nav>
-    </header>
-      <main class="container container-fluid mt-5">
-        {{{ body }}}
-      </main>
-  </div>
-  </body>
-=======
+  <title>Pillar Art Gallery</title> 
   <link rel = "stylesheet" href="http://localhost:3001/css/main_template.css">
   <link rel = "stylesheet" href="http://localhost:3001/css/pillar.css">
   
 </head>
 
 <body class = "template_frame">
+  <div class = "roof_marker"></div>
+  <div class = "floor_marker"></div>
+  <div class = "center">
   <div class = "left_frame_bar">
     <h1> PILLAR</h1>
     <nav>
-        <a href="http://localhost:3001/"> Home</a>
-        <a href="http://localhost:3001/"> Profile</a>
-        <a href="http://localhost:3001/"> Something</a>
-    </nav>
-  </div>
+      <a href="http://localhost:3001/"> Home</a>
+      <a href="http://localhost:3001/"> Profile</a>
+      <a href="http://localhost:3001/"> Something</a>
+      </nav>
+    </div>  
+    <div class = "focus">
+      {{{ body }}}
+    </div>
+    <div class = "right_frame_bar">
+      <div class = "left side" ></div>
+    </div>
 
-  <main>
-    {{{ body }}}
-  </main>
-
-  <div class = "right_frame_bar">
-     
-  </div>
+    </div>
+    
 </body>
->>>>>>> a8f0bff74556d512deaec72bb38ef567875bbeb9
 
 </html>

@@ -1,4 +1,4 @@
-//Get all user images
+/*//Get all user images
 const getImages = async () => {
   let imageUrls
   let imageData = await fetch('/api/artwork/imageurls',
@@ -42,8 +42,46 @@ console.log(htmlArray)
     var imageIdecies = new Array(total);
     console.log(imageIdecies);
     for (let i = 0; i < total; i++) { imageIdecies[i] = i; }
-    console.log(imageIdecies)
+    console.log(imageIdecies)*/
+    const images = 
+[
+         "https://media.giphy.com/media/aFTt8wvDtqKCQ/giphy.gif",
+         "https://media.giphy.com/media/IcifS1qG3YFlS/giphy.gif",
+         "https://media.giphy.com/media/2nrr1SrkVEdpK/giphy.gif",
+         "https://media.giphy.com/media/10qHEa7ShsJ8I0/giphy.gif",
+         "https://media.giphy.com/media/eCGTfFtjcp928/giphy.gif",
+         "https://media.giphy.com/media/ErZ8hv5eO92JW/giphy.gif",
+         "https://media.giphy.com/media/UZpw1AwQhPsHK/giphy.gif",
+         "https://media.giphy.com/media/12XsHmJxR5c8QU/giphy.gif",
+         "https://media.giphy.com/media/JCakjZnyrPeYE/giphy.gif",
+         "https://media.giphy.com/media/dCFptKvuhxaZa/giphy.gif",
+         "https://media.giphy.com/media/QxZQ7dSV4j6GQ/giphy.gif",
+         "https://media.giphy.com/media/7Uj0tJ6r2CeOs/giphy.gif",
+         "https://media.giphy.com/media/12LwwLbyMZ0LqE/giphy.gif",
+         "https://media.giphy.com/media/KbqNVz8IGddRYPFOfl/giphy.gif",
+         "https://media.giphy.com/media/yU6hCIV6clBSOj3Q1Y/giphy.gif",
+         "https://media.giphy.com/media/xUOxf8EQfGMcxgo7w4/giphy.gif",
+         "https://media.giphy.com/media/3o6nV3whKsbIIcZ0FW/giphy.gif",
+         "https://media.giphy.com/media/NsBeF6OlZuermZUv9u/giphy.gif",  
+         "https://media.giphy.com/media/13p77tfexyLtx6/giphy.gif",
+         "https://media.giphy.com/media/Gp32KJtqe08Lu/giphy.gif",
+         "https://media.giphy.com/media/7TdN6y8lUl5Qs/giphy.gif",
+         "https://media.giphy.com/media/1jy3pev2Eu5Ve/giphy.gif",
+         "https://media.giphy.com/media/nEXmNl3uha5YA/giphy.gif",
+         "https://media.giphy.com/media/N35rW3vRNeaDC/giphy.gif",
+         "https://media.giphy.com/media/lFmmcqA4VBhMQ/giphy.gif",
+         "https://media.giphy.com/media/kMkTJV4a32ba8/giphy.gif",
+         "https://media.giphy.com/media/12J6nIC1FJ7i00/giphy.gif",
+         "https://media.giphy.com/media/7JsQ5EQTZlgHe/giphy.gif",
+         "https://media.giphy.com/media/uG3lKkAuh53wc/giphy.gif",
+         "https://media.giphy.com/media/BSx6mzbW1ew7K/giphy.gif"
+];
   
+var total = images.length;
+var imageIdecies = new Array(total);
+console.log(imageIdecies);
+for (let i = 0; i < total; i++) { imageIdecies[i] = i; }
+console.log(imageIdecies);
     var currentSet = new Array(9);
     console.log(currentSet);
     resetIndecies();
@@ -184,12 +222,13 @@ console.log(htmlArray)
     function populateCells() {
       for (i = 0; i < cellCount; i++) {
         var current = document.createElement('div');
-        current.innerHTML = htmlArray[currentSet[i]];
+        current.innerHTML = images[currentSet[i]];
         cells[i].appendChild(current);
       }
     }
   
-    function swapPrevious() {
+    function swapPrevious() 
+    {
       var currentBacks = document.querySelectorAll(".reset");
       var pending = 0;
       if (currentBacks[pending].dataset.placement != "backR") { pending++; }
@@ -198,7 +237,8 @@ console.log(htmlArray)
       currentImg[0].src = images[currentSet[5]];
     }
   
-    function swapNext() {
+    function swapNext() 
+    {
       var currentBacks = document.querySelectorAll(".reset");
       var pending = 0;
       if (currentBacks[pending].dataset.placement != "backL") { pending++; }
@@ -206,6 +246,6 @@ console.log(htmlArray)
       console.log(currentImg);
       currentImg[0].src = images[currentSet[4]];
     }
-  }
   
-  getApiImages()
+  
+  //getApiImages()
