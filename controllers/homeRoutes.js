@@ -4,7 +4,7 @@ const { Artist, Artwork } = require('../models');
 // GET Pillar
 router.get('/', async (req, res) => {
   try {
-    res.render('homeOfThePillar');
+    res.render('homeOfThePillar', {user: req.session.logged_in});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

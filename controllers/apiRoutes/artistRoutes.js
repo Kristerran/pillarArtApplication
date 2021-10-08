@@ -36,7 +36,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await artistData.checkPassword(req.body.password);
+    const validPassword = await artistData.checkPass(req.body.password);
 
     if (!validPassword) {
       res
@@ -49,10 +49,11 @@ router.post('/login', async (req, res) => {
       req.session.artist_id = artistData.id;
       req.session.logged_in = true;
       
-      res.json({ user: userData, message: 'You are now logged in!' });
+      res.redirect('/');
     });
 
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
@@ -70,10 +71,16 @@ router.post('/logout', (req, res) => {
 router.post("/register", async (req, res) => {
   try {
     const artist = await Artist.create(req.body);
-    console.log(artist);
-    res.redirect("/register");
+    req.session.save(() => {
+      req.session.artist_id = artist.id;
+      req.session.logged_in = true;
+      
+      res.status(200).redirect('/');
+    });
   } catch (err) {
     console.log(err);
   }
 });
+
+
 module.exports = router;

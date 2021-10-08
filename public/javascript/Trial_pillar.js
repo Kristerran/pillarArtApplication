@@ -28,10 +28,10 @@ const getApiImages = async () => {
       .then(resp => resp.json())
       .then(data => {
         htmlArray.push(`<div class="container"><h4 id="title">The Metropolitan Museum of Art</h4><div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><div class="photo"><img src='${data.primaryImage}'></img></div><div class="flip-card-back"><h4 class="title">${data.title}</h4><p class="username font-weight-bold">${data.artistDisplayName}</p><p class="artistDisplayBio">${data.artistDisplayBio}</p><p class="objectEndDate pb-5"> Date: ${data.objectEndDate}</p><p class="show-id"></p></div>`)
-        console.log(htmlArray.length)
-      }).then( data => {if(htmlArray == 10){
-        startCarousel()
-      }})
+        if(htmlArray.length == 10){
+          startCarousel()
+        }
+      })
     }
   })
 }

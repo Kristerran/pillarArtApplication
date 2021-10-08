@@ -23,17 +23,17 @@ Artist.init(
             validate: {
                 len: [3],
             },
-            password: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            bio: {
-                type: DataTypes.TEXT,
-                allowNull: true
-            },
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
             validate: {
                 len: [8],
             },
+        },
+        bio: {
+            type: DataTypes.TEXT,
+            allowNull: true
         },
     },
     {
