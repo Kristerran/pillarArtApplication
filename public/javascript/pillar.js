@@ -209,14 +209,3 @@ console.log(htmlArray)
   }
   
   getApiImages()
-
-/* get gallery api search url
-  fetch search url
-  push object id data into objectIds array
-  for each object id, append object id to gallery object get fetch url
-  fetch from gallery object url
-  push object data into html template literal 
-  push template into htmlArray
-  return to external variable (Also htmlArray)
-
- */
