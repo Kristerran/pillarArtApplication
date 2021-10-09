@@ -1,6 +1,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Pillar Art Gallery</title> 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel = "stylesheet" href="../css/main_template.css">
   <link rel = "stylesheet" href="../css/pillar.css">
   <link rel="stylesheet" href="../css/flipCards.css">
@@ -12,7 +13,7 @@
   <div class = "roof_marker"></div>
   <div class = "floor_marker"></div>
   <div class = "center">
-  <div class = "left_frame_bar" onmouseenter ="shiftLeft()" onmouseout="center()">
+  <div class = "left_frame_bar" onclick ="shiftLeft()" onmouseout="center()">
     <div class = "header_container">
     <h1>PILLAR</h1>
     <nav>
@@ -21,15 +22,18 @@
       <a href="/upload"> Post</a>
       <a href="/register">Register</a>
       </nav>
-      </div>
+      <div class = "reveal_left">
+        <
+      </div> 
+      </div >
     </div>  
     <div class = "focus">
       {{{ body }}}
     </div>
-    <div class = "right_frame_bar" onmouseenter="shiftRight()" onmouseout="center()">
+    <div class = "right_frame_bar" onclick="shiftRight()" onmouseout="center()">
       <div class = "left side" ></div>
     </div>
-
+        
     </div>
     </div>
 </body>
