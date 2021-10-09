@@ -35,7 +35,7 @@ Artwork.init(
       type: DataTypes.BLOB("long"),
       allowNull: true,
     },
-    artist_id: {
+    artist: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
