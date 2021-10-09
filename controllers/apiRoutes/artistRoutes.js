@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
     const artistData = await Artist.create(req.body);
 
     req.session.save(() => {
-      req.session.artist_id = artistData.id;
+      req.session.artist = artistData.id;
       req.session.logged_in = true;
 
       res.status(200).json(artistData);
@@ -46,7 +46,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.artist_id = artistData.id;
+      req.session.artist = artistData.id;
       req.session.logged_in = true;
       
       res.redirect('/');

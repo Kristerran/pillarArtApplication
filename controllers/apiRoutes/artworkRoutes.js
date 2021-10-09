@@ -68,7 +68,7 @@ router.get('/', async (req, res) => {
         data: fs.readFileSync(
           process.cwd() + '/public/uploads/'+ req.file.filename
         ),
-         artist_id: req.session.artist_id,
+         artist: req.session.artist,
         
       }).then((artwork) => {
         fs.writeFileSync(
