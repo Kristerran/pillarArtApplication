@@ -1,34 +1,42 @@
-//Get all user images
-const getImages = async () => {
-  let imageUrls
-  let imageData = await fetch('/api/artwork/imageurls',
-  {
-    method: 'GET'
-  })
-  .then
-  (response => response.json())
-  .then
-  (data => { imageUrls = Object.values(data) })
-  return imageUrls
-}
-//Get Api Images
+
 const htmlArray = []
-const getApiImages = async () => {
+var uploadLength = 0
+//Get all user images
+const getUploadImages = async () => {
+  const getUrl = "/api/artwork"
+  fetch(`${getUrl}`)
+  .then(response => response.json())
+  .then(data => {
+    let allArtwork = data
+    console.log(allArtwork)
+    uploadLength += data.length
+    console.log(uploadLength)
+    for (i = 0; i < data.length; i++) {
+        let currentArtwork = allArtwork[i]
+        htmlArray.push(`<div class="container"> <div class="flip-card"> <div class="flip-card-inner"> <div class="flip-card-front"> <div class="photo"> <img src='${currentArtwork.path}'> </img> </div> </div> <div class="flip-card-back"><h4 class="title">${currentArtwork.title}</h4><p class="artistDisplayBio">${currentArtwork.description}</p> <p class="show-id"></p></div>`)
+        if(htmlArray.length == data.length){
+          getApiImages()
+        }
+      }
+    })
+  }
   
-  const getWomanUrl = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=woman"
+//Get Api Images
+const getApiImages = async () => {
+  const getUrl = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=woman"
   const apiLink = "https://collectionapi.metmuseum.org/public/collection/v1/objects/"
   // Get woman art IDs
-  fetch(`${getWomanUrl}`)
+  fetch(`${getUrl}`)
   .then(response => response.json())
   .then(data => {
     let objectIDs = data.objectIDs;
     
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < 20; i++) {
       fetch(`${apiLink}` + objectIDs[i])
       .then(resp => resp.json())
       .then(data => {
-        htmlArray.push(`<div class="container"><h4 id="title">The Metropolitan Museum of Art</h4><div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><div class="photo"><img src='${data.primaryImage}'></img></div><div class="flip-card-back"><h4 class="title">${data.title}</h4><p class="username font-weight-bold">${data.artistDisplayName}</p><p class="artistDisplayBio">${data.artistDisplayBio}</p><p class="objectEndDate pb-5"> Date: ${data.objectEndDate}</p><p class="show-id"></p></div>`)
-        if(htmlArray.length == 10){
+        htmlArray.push(`<div class="container"> <div class="flip-card"> <div class="flip-card-inner"> <div class="flip-card-front"> <div class="photo"> <img src='${data.primaryImage}'> </img> </div> </div> <div class="flip-card-back"><h4 class="title">${data.title}</h4><p class="username font-weight-bold">${data.artistDisplayName}</p><p class="artistDisplayBio">${data.artistDisplayBio}</p><p class="objectEndDate pb-5"> Date: ${data.objectEndDate}</p><p class="show-id"></p></div>`)
+        if(htmlArray.length == 20 + uploadLength){
           startCarousel()
         }
       })
@@ -60,7 +68,7 @@ console.log(htmlArray)
     var imageIndex = 0;
     var nexImaget = 1;
   
-    resetStyles();
+     resetStyles();
     populateCells();
   
     function rotateCarousel() {
@@ -74,7 +82,7 @@ console.log(htmlArray)
       swapPositionsBkwd();
       swapIndexBkwd();
       rotateCarousel();
-      resetStyles();
+       resetStyles();
       resetIndecies();
       swapPrevious();
       console.log(cells);
@@ -86,7 +94,7 @@ console.log(htmlArray)
       swapPositionsFwd();
       swapIndexFwd();
       rotateCarousel();
-      resetStyles();
+       resetStyles();
       resetIndecies()
       console.log(cells);
       swapNext();
@@ -193,19 +201,19 @@ console.log(htmlArray)
       var currentBacks = document.querySelectorAll(".reset");
       var pending = 0;
       if (currentBacks[pending].dataset.placement != "backR") { pending++; }
-      var currentImg = currentBacks[pending].getElementsByTagName("img");
-      console.log(currentImg);
-      currentImg[0].src = images[currentSet[5]];
+      var currentDiv = currentBacks[pending].getElementsByTagName("div");
+      console.log(currentDiv);
+      currentDiv[0].innerHTML = htmlArray[currentSet[5]];
     }
   
-    function swapNext() {
+     function swapNext() {
       var currentBacks = document.querySelectorAll(".reset");
       var pending = 0;
       if (currentBacks[pending].dataset.placement != "backL") { pending++; }
-      var currentImg = currentBacks[pending].getElementsByTagName("img");
-      console.log(currentImg);
-      currentImg[0].src = images[currentSet[4]];
+      var currentDiv = currentBacks[pending].getElementsByTagName("div");
+      console.log(currentDiv);
+      currentDiv[0].innerHTML = htmlArray[currentSet[4]];
     }
   }
   
-  getApiImages()
+  getUploadImages()
