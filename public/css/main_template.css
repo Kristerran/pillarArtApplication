@@ -1,21 +1,27 @@
+:root{
+    --mainwhite: rgb(255,228,196);
+    --shadewhite: rgb(230,205,176);
+    --darkerwhite: rgb(191,171,147);
+    --darkestwhite: rgb(128,114,98);
+}
+
 .template_frame
 {
     margin: 0 auto;
     max-width: 1820px;
     max-height: 910px;
-    width: 100vw;
+    width: 100%;
     height: 910px ;
     border: 5px solid skyblue;
-    background: cornflowerblue;
+    background: linear-gradient(var(--darkerwhite)20%, var(--shadewhite), var(--mainwhite) , var(--shadewhite), var(--darkerwhite)20%);
 }
 
 .roof_marker
 {
     position: absolute;
-    width: 1820px;
+    width: 113.5em ;
     height: 150px;
-    background-image: linear-gradient(cornsilk 60%, black .5%);
-   /* border-radius: 0 0 100% 100% ;*/
+    background-image: linear-gradient(var(--mainwhite), var(--darkerwhite), var(--darkestwhite), grey  );
 }
 
 .floor_marker
@@ -23,15 +29,16 @@
     height: 150px;
     margin-top: 760px;
     position: absolute;
-    width: 1820px;
-    background-image: linear-gradient(black .5%, bisque 60%);
-   /* border-radius: 100% 100% 0 0;*/
+    width: 113.5rem;
+    border-top:10px darkslategrey;
+    background-image: linear-gradient( var(--darkestwhite), var(--darkerwhite),  var(--mainwhite) );
 }
 
 .center
 {
+
     position: absolute;
-    width: 1820px;
+    width: 113.5em;
     background: gray 0.2;
     display: flex;
     justify-content: space-between;
@@ -44,13 +51,14 @@
     background: 0;
     display: flex;
     flex-direction: column;
-    border-left: 200px solid teal;
-   /* border-radius: 0 100% 100% 0;*/
+    border-left: 200px solid  var(--darkestwhite );
     border-top: 150px solid transparent;
     border-bottom: 150px solid transparent;
     transition: all 1s  ease-in-out;
 
 }
+
+
 
 .header_container
 {
@@ -70,8 +78,7 @@
     background: 0;
     display: flex;
     justify-content: space-between;
-    /*border-radius: 100% 0 0 100%;*/
-    border-right: 200px solid teal;
+    border-right: 200px solid var(--darkestwhite);
     border-top: 150px solid transparent;
     border-bottom: 150px solid transparent;
     transition: all 1s ease-in-out;
@@ -87,7 +94,6 @@
     border-radius: 20px;
     align-self: center;
     width: 600px;
-    
 }
 
 
