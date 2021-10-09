@@ -11,21 +11,27 @@
             enctype="multipart/form-data"
           >
             <div class="form-group">
+              <div>
+             <label for="title">Artwork Title</label>
+              <input type="text"
+              name = 'title'
+              id = 'title'
+              />
+              </div>
+              <div>
+                <label for="description">Artwork Description</label>
+                <input type="text"
+                name = 'description'
+                id = 'description'>
+              </div>
+            </div>
+            <div>
               <input
                 type="file"
                 name="file"
                 id="input-files"
                 class="form-control-file border"
               />
-              <label for="title">Artwork Title</label>
-              <input type="text"
-              name = 'title'
-              id = 'title'
-              />
-              <label for="description">Artwork Description</label>
-              <input type="text"
-              name = 'description'
-              id = 'description'>
             </div>
             <button type="submit" class="btn btn-primary">Upload artwork</button>
           </form>

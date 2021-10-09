@@ -2,7 +2,7 @@
   background-color: transparent;
   width: 450px;
   height: 450px;
-  border:10pt outset red;
+  border:10pt outset transparent;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
@@ -35,15 +35,47 @@
 }
 
 .flip-card-back {
-  background-image: url("textback.jpeg");
+  background-image: url("/api/textback.jpeg");
   color: black;
   transform: rotateY(180deg);
   border:10pt outset #966F33;
   text-align: center;
   font-family: Chalkduster, fantasy;
   vertical-align: middle;
+  /*font-size: 15px; dont know if we need*/
 }
 img {
   max-width: 425px;
   max-height: 425px;
+}
+
+/*this is for forms*/
+
+.loginForm {
+  height: 150px;
+  width: 200px;
+  border:10pt outset #966F33;
+  background-image: url("/api/textback.jpeg");
+  font-weight: bold;
+  font-family: Chalkduster, fantasy;
+  box-shadow: inset 10px 10px 37px 0px rgba(0,0,0,0.75);
+}
+.regisForm {
+    height: 320px;
+    width:275px;
+    border:10pt outset #966F33;
+  background-image: url("/api/textback.jpeg");
+  font-weight: bold;
+  font-family: Chalkduster, fantasy;
+}
+.mt-4 {
+  height: 100px;
+  width:350px;
+  border:10pt outset #966F33;
+background-image: url("/api/textback.jpeg");
+font-weight: bold;
+font-family: Chalkduster, fantasy;
+text-align: center;
+position: absolute;
+padding-top: 10px;
 }
