@@ -1,47 +1,95 @@
 .template_frame
 {
-    display:flex;
-    justify-content: space-between;
-    max-width: 1920px;
-    max-height: 1350px;
+    margin: 0 auto;
+    max-width: 1820px;
+    max-height: 910px;
     width: 100vw;
-    height: 100vh;
-    margin: auto;
-    border: 5px solid black;
+    height: 910px ;
+    border: 5px solid skyblue;
+    background: cornflowerblue;
+}
+
+.roof_marker
+{
+    position: absolute;
+    width: 1820px;
+    height: 150px;
+    background-color: cornsilk;
+    border-radius: 0 0 100% 100% ;
+}
+
+.floor_marker
+{
+    height: 150px;
+    margin-top: 760px;
+    position: absolute;
+    width: 1820px;
+    background-color: bisque;
+    border-radius: 100% 100% 0 0;
+}
+
+.center
+{
+    position: absolute;
+    width: 1820px;
+    background: gray 0.2;
+    display: flex;
+    justify-content: space-between;
 }
 
 .left_frame_bar
 {
-    color: white;
-    width: 10px;
-    height:100%;
+    width: 0px;
+    height:630px;
     background: 0;
     display: flex;
-    justify-content: space-between;
-    
+    flex-direction: column;
+    border-left: 200px solid teal;
+    border-radius: 0 100% 100% 0;
+    border-top: 140px solid transparent;
+    border-bottom: 140px solid transparent;
+    transition: all 1s  ease-in-out;
 
-    border-left: 150px solid #32557f;
-    border-top: 100px solid transparent;
-    border-bottom: 100px solid transparent;
 }
 
-
-body
+.header_container
 {
-    margin: auto;
-    width:auto;
+    margin-left: -250px;
+}
+
+.focus
+{
+    z-index: 1000;
+    align-self: center;
 }
 
 .right_frame_bar
 {
-    width: 10px;
-    height:100%;
-    background-color: skyblue;
+    width: 0px;
+    height:630px;
+    background: 0;
     display: flex;
     justify-content: space-between;
-    
-
-    border-right: 150px solid #32557f;
-    border-top: 100px solid transparent;
-    border-bottom: 100px solid transparent;
+    border-radius: 100% 0 0 100%;
+    border-right: 200px solid teal;
+    border-top: 140px solid transparent;
+    border-bottom: 140px solid transparent;
+    transition: all 1s ease-in-out;
 }
+
+
+
+
+
+.upload_container
+{
+    height: 350px;
+    border-radius: 20px;
+    align-self: center;
+    width: 600px;
+}
+
+
+
+
+

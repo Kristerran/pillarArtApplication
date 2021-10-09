@@ -1,24 +1,12 @@
-/*{ box-sizing: border-box; }*/
-
-
-
-.floor
-{
-    width: 100%;
-    margin-top: -250px;
-    height: 500px;
-    background-color: burlywood;
-}
-
 .pillar_container
 {
-
-  height: 1000px;
-  border: 5px solid black;
+  align-content: flex-end;
+  margin: auto;
+  height: 100%;
   width: 420px;
-  margin:auto;
   display: flex;
   flex-direction: column;
+
 }
 
 .buttons_box
@@ -54,12 +42,12 @@
 }
 
 .scene {
+  justify-self: center;
   border: 1px solid #CCC;
   margin: 40px 0;
   position: relative;
-  width: 371px;
+  width:420px;
   height: 140px;
-  margin:0 auto;
   perspective: 1000px;
 }
 
@@ -75,7 +63,7 @@
 .carousel__cell {
   margin: -20%;
   position: absolute;
-  width: 610px;
+  width: 630px;
   height: 560px;
   left: 10px;
   top: 10px;
