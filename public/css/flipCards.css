@@ -35,13 +35,16 @@
 }
 
 .flip-card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: url("../tmp/textback.jpeg");
   color: black;
   transform: rotateY(180deg);
   border:10pt outset #966F33;
   text-align: center;
   font-family: Chalkduster, fantasy;
-  vertical-align:top;
   font-size: medium;
 }
 img {

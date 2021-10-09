@@ -11,7 +11,7 @@
 
 .buttons_box
 {
-  opacity: 1;
+  opacity: .05;
   transition: opacity .4s ease-in-out;
   display: flex;
   align-self: center;
@@ -19,6 +19,12 @@
   justify-content: space-between;
   z-index: 10000000;
   
+}
+
+.buttons_box:hover
+{
+  opacity: 1;
+  transition: opacity .4s ease-in-out;
 }
 
 .previous-button
@@ -63,11 +69,14 @@
 .carousel__cell {
   margin: -20%;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 630px;
   height: 560px;
   left: 10px;
   top: 10px;
-  background: grey;
+  background-image: url("../tmp/marble-2398946__480.jpg");
   border: 2px solid black;
   line-height: 116px;
   font-size: 80px;
