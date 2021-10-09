@@ -15,7 +15,7 @@
     width: 1820px;
     height: 150px;
     background-color: cornsilk;
-    border-radius: 0 0 100% 100% ;
+   /* border-radius: 0 0 100% 100% ;*/
 }
 
 .floor_marker
@@ -25,7 +25,7 @@
     position: absolute;
     width: 1820px;
     background-color: bisque;
-    border-radius: 100% 100% 0 0;
+   /* border-radius: 100% 100% 0 0;*/
 }
 
 .center
@@ -40,14 +40,14 @@
 .left_frame_bar
 {
     width: 0px;
-    height:630px;
+    height:610px;
     background: 0;
     display: flex;
     flex-direction: column;
     border-left: 200px solid teal;
-    border-radius: 0 100% 100% 0;
-    border-top: 140px solid transparent;
-    border-bottom: 140px solid transparent;
+   /* border-radius: 0 100% 100% 0;*/
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid transparent;
     transition: all 1s  ease-in-out;
 
 }
@@ -66,14 +66,14 @@
 .right_frame_bar
 {
     width: 0px;
-    height:630px;
+    height:610px;
     background: 0;
     display: flex;
     justify-content: space-between;
-    border-radius: 100% 0 0 100%;
+    /*border-radius: 100% 0 0 100%;*/
     border-right: 200px solid teal;
-    border-top: 140px solid transparent;
-    border-bottom: 140px solid transparent;
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid transparent;
     transition: all 1s ease-in-out;
 }
 
@@ -87,6 +87,7 @@
     border-radius: 20px;
     align-self: center;
     width: 600px;
+    
 }
 
 
