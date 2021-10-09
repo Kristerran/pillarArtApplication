@@ -76,7 +76,7 @@ router.get('/', async (req, res) => {
           artwork.data
         );
   
-        res.send(`File has been uploaded.`);
+        res.redirect(`/`);
       });
     } catch (error) {
       console.log(error);

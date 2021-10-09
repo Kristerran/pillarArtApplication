@@ -68,7 +68,7 @@ console.log(htmlArray)
     var imageIndex = 0;
     var nexImaget = 1;
   
-    // resetStyles();
+     resetStyles();
     populateCells();
   
     function rotateCarousel() {
@@ -82,7 +82,7 @@ console.log(htmlArray)
       swapPositionsBkwd();
       swapIndexBkwd();
       rotateCarousel();
-      // resetStyles();
+       resetStyles();
       resetIndecies();
       swapPrevious();
       console.log(cells);
@@ -94,7 +94,7 @@ console.log(htmlArray)
       swapPositionsFwd();
       swapIndexFwd();
       rotateCarousel();
-      // resetStyles();
+       resetStyles();
       resetIndecies()
       console.log(cells);
       swapNext();
@@ -201,18 +201,18 @@ console.log(htmlArray)
       var currentBacks = document.querySelectorAll(".reset");
       var pending = 0;
       if (currentBacks[pending].dataset.placement != "backR") { pending++; }
-      var currentImg = currentBacks[pending].getElementsByTagName("img");
-      console.log(currentImg);
-      currentImg[0].src = images[currentSet[5]];
+      var currentDiv = currentBacks[pending].getElementsByTagName("div");
+      console.log(currentDiv);
+      currentDiv[0].innerHTML = htmlArray[currentSet[5]];
     }
   
-    function swapNext() {
+     function swapNext() {
       var currentBacks = document.querySelectorAll(".reset");
       var pending = 0;
       if (currentBacks[pending].dataset.placement != "backL") { pending++; }
-      var currentImg = currentBacks[pending].getElementsByTagName("img");
-      console.log(currentImg);
-      currentImg[0].innerHTML = htmlArray[currentSet[4]];
+      var currentDiv = currentBacks[pending].getElementsByTagName("div");
+      console.log(currentDiv);
+      currentDiv[0].innerHTML = htmlArray[currentSet[4]];
     }
   }
   
