@@ -6,6 +6,7 @@
     width: 100vw;
     height: 910px ;
     border: 5px solid skyblue;
+    background: cornflowerblue;
 }
 
 .roof_marker
@@ -14,22 +15,21 @@
     width: 1820px;
     height: 150px;
     background-color: cornsilk;
-    border: 5px solid cornsilk;
+    border-radius: 0 0 100% 100% ;
 }
 
 .floor_marker
 {
     height: 150px;
-    margin-top: 770px;
+    margin-top: 760px;
     position: absolute;
     width: 1820px;
     background-color: bisque;
-    border: 5px solid bisque;
+    border-radius: 100% 100% 0 0;
 }
 
 .center
 {
-    border: 10px solid black;
     position: absolute;
     width: 1820px;
     background: gray 0.2;
@@ -40,13 +40,21 @@
 .left_frame_bar
 {
     width: 0px;
-    height:610px;
+    height:630px;
     background: 0;
     display: flex;
-    justify-content: space-between;
-    border-left: 300px solid black;
-    border-top: 150px solid transparent;
-    border-bottom: 150px solid transparent;
+    flex-direction: column;
+    border-left: 200px solid teal;
+    border-radius: 0 100% 100% 0;
+    border-top: 140px solid transparent;
+    border-bottom: 140px solid transparent;
+    transition: all 1s  ease-in-out;
+
+}
+
+.header_container
+{
+    margin-left: -250px;
 }
 
 .focus
@@ -58,13 +66,15 @@
 .right_frame_bar
 {
     width: 0px;
-    height:610px;
+    height:630px;
     background: 0;
     display: flex;
     justify-content: space-between;
-    border-right: 300px solid teal;
-    border-top: 150px solid transparent;
-    border-bottom: 150px solid transparent;
+    border-radius: 100% 0 0 100%;
+    border-right: 200px solid teal;
+    border-top: 140px solid transparent;
+    border-bottom: 140px solid transparent;
+    transition: all 1s ease-in-out;
 }
 
 
@@ -75,9 +85,8 @@
 {
     height: 350px;
     border-radius: 20px;
-    border: 5px solid black;
     align-self: center;
-    width: 500px;
+    width: 600px;
 }
 
 
