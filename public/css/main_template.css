@@ -14,7 +14,7 @@
     position: absolute;
     width: 1820px;
     height: 150px;
-    background-color: cornsilk;
+    background-image: linear-gradient(cornsilk 60%, black .5%);
    /* border-radius: 0 0 100% 100% ;*/
 }
 
@@ -24,7 +24,7 @@
     margin-top: 760px;
     position: absolute;
     width: 1820px;
-    background-color: bisque;
+    background-image: linear-gradient(black .5%, bisque 60%);
    /* border-radius: 100% 100% 0 0;*/
 }
 
