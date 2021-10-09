@@ -1,10 +1,10 @@
 const Artist = require('./Artist');
 const Artwork = require('./Artwork')
 Artist.hasMany(Artwork, {
-    foreignKey: "artist_id",
+    foreignKey: "artist",
     onDelete: "CASCADE"
 });
 Artwork.belongsTo(Artist, {
-    foreignKey: "artist_id"
+    foreignKey: "artist"
 });
 module.exports = { Artist, Artwork, };
