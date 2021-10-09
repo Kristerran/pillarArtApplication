@@ -29,20 +29,20 @@
 }
 
 .flip-card-front {
-  background-color: white;
+  background-image: url("../tmp/textfront.jpeg");
   color: black;
-  border:10pt outset grey;
+  border:10pt outset #966F33;
 }
 
 .flip-card-back {
-  background-image: url("/api/textback.jpeg");
+  background-image: url("../tmp/textback.jpeg");
   color: black;
   transform: rotateY(180deg);
   border:10pt outset #966F33;
   text-align: center;
   font-family: Chalkduster, fantasy;
-  vertical-align: middle;
-  /*font-size: 15px; dont know if we need*/
+  vertical-align:top;
+  font-size: medium;
 }
 img {
   max-width: 425px;
