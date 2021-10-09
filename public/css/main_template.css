@@ -58,11 +58,28 @@
 
 }
 
-
-
 .header_container
-{
+{   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     margin-left: -150px;
+    background-image: url("../tmp/textfront.jpeg");
+    border:10pt outset #966F33;
+    transform: skewY(10deg) rotateY(-20deg);
+    perspective: 100px;
+    transform-style: preserve-3d;
+}
+
+.header_container > nav > a
+{
+    text-decoration: none;
+    color: black;
+}
+.header_container > nav > a:hover{
+    color: orangered;
 }
 
 .focus
