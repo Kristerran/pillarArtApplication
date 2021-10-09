@@ -68,9 +68,6 @@ router.get('/', async (req, res) => {
         data: fs.readFileSync(
           process.cwd() + '/public/uploads/'+ req.file.filename
         ),
-        // signature_data: fs.readFileSync(
-        //   "C:/Users/krist/pillarArtApplication/public/uploads/" + req.file.filename
-        // ),
          artist_id: req.session.artist_id,
         
       }).then((artwork) => {
