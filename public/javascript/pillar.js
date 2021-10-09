@@ -1,34 +1,42 @@
-/*//Get all user images
-const getImages = async () => {
-  let imageUrls
-  let imageData = await fetch('/api/artwork/imageurls',
-  {
-    method: 'GET'
-  })
-  .then
-  (response => response.json())
-  .then
-  (data => { imageUrls = Object.values(data) })
-  return imageUrls
-}
-//Get Api Images
+
 const htmlArray = []
-const getApiImages = async () => {
+var uploadLength = 0
+//Get all user images
+const getUploadImages = async () => {
+  const getUrl = "/api/artwork"
+  fetch(`${getUrl}`)
+  .then(response => response.json())
+  .then(data => {
+    let allArtwork = data
+    console.log(allArtwork)
+    uploadLength += data.length
+    console.log(uploadLength)
+    for (i = 0; i < data.length; i++) {
+        let currentArtwork = allArtwork[i]
+        htmlArray.push(`<div class="container"> <div class="flip-card"> <div class="flip-card-inner"> <div class="flip-card-front"> <div class="photo"> <img src='${currentArtwork.path}'> </img> </div> </div> <div class="flip-card-back"><h4 class="title">${currentArtwork.title}</h4><p class="artistDisplayBio">${currentArtwork.description}</p> <p class="show-id"></p></div>`)
+        if(htmlArray.length == data.length){
+          getApiImages()
+        }
+      }
+    })
+  }
   
-  const getWomanUrl = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=woman"
+//Get Api Images
+const getApiImages = async () => {
+  const getUrl = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=woman"
   const apiLink = "https://collectionapi.metmuseum.org/public/collection/v1/objects/"
   // Get woman art IDs
-  fetch(`${getWomanUrl}`)
+  fetch(`${getUrl}`)
   .then(response => response.json())
   .then(data => {
     let objectIDs = data.objectIDs;
     
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < 20; i++) {
       fetch(`${apiLink}` + objectIDs[i])
       .then(resp => resp.json())
       .then(data => {
-        htmlArray.push(`<div class="container"><h4 id="title">The Metropolitan Museum of Art</h4><div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><div class="photo"><img src='${data.primaryImage}'></img></div><div class="flip-card-back"><h4 class="title">${data.title}</h4><p class="username font-weight-bold">${data.artistDisplayName}</p><p class="artistDisplayBio">${data.artistDisplayBio}</p><p class="objectEndDate pb-5"> Date: ${data.objectEndDate}</p><p class="show-id"></p></div>`)
-        if(htmlArray.length == 10){
+        htmlArray.push(`<div class="container"> <div class="flip-card"> <div class="flip-card-inner"> <div class="flip-card-front"> <div class="photo"> <img src='${data.primaryImage}'> </img> </div> </div> <div class="flip-card-back"><h4 class="title">${data.title}</h4><p class="username font-weight-bold">${data.artistDisplayName}</p><p class="artistDisplayBio">${data.artistDisplayBio}</p><p class="objectEndDate pb-5"> Date: ${data.objectEndDate}</p><p class="show-id"></p></div>`)
+        if(htmlArray.length == 20 + uploadLength){
           startCarousel()
         }
       })
@@ -42,46 +50,8 @@ console.log(htmlArray)
     var imageIdecies = new Array(total);
     console.log(imageIdecies);
     for (let i = 0; i < total; i++) { imageIdecies[i] = i; }
-    console.log(imageIdecies)*/
-    const images = 
-[
-         "https://media.giphy.com/media/aFTt8wvDtqKCQ/giphy.gif",
-         "https://media.giphy.com/media/IcifS1qG3YFlS/giphy.gif",
-         "https://media.giphy.com/media/2nrr1SrkVEdpK/giphy.gif",
-         "https://media.giphy.com/media/10qHEa7ShsJ8I0/giphy.gif",
-         "https://media.giphy.com/media/eCGTfFtjcp928/giphy.gif",
-         "https://media.giphy.com/media/ErZ8hv5eO92JW/giphy.gif",
-         "https://media.giphy.com/media/UZpw1AwQhPsHK/giphy.gif",
-         "https://media.giphy.com/media/12XsHmJxR5c8QU/giphy.gif",
-         "https://media.giphy.com/media/JCakjZnyrPeYE/giphy.gif",
-         "https://media.giphy.com/media/dCFptKvuhxaZa/giphy.gif",
-         "https://media.giphy.com/media/QxZQ7dSV4j6GQ/giphy.gif",
-         "https://media.giphy.com/media/7Uj0tJ6r2CeOs/giphy.gif",
-         "https://media.giphy.com/media/12LwwLbyMZ0LqE/giphy.gif",
-         "https://media.giphy.com/media/KbqNVz8IGddRYPFOfl/giphy.gif",
-         "https://media.giphy.com/media/yU6hCIV6clBSOj3Q1Y/giphy.gif",
-         "https://media.giphy.com/media/xUOxf8EQfGMcxgo7w4/giphy.gif",
-         "https://media.giphy.com/media/3o6nV3whKsbIIcZ0FW/giphy.gif",
-         "https://media.giphy.com/media/NsBeF6OlZuermZUv9u/giphy.gif",  
-         "https://media.giphy.com/media/13p77tfexyLtx6/giphy.gif",
-         "https://media.giphy.com/media/Gp32KJtqe08Lu/giphy.gif",
-         "https://media.giphy.com/media/7TdN6y8lUl5Qs/giphy.gif",
-         "https://media.giphy.com/media/1jy3pev2Eu5Ve/giphy.gif",
-         "https://media.giphy.com/media/nEXmNl3uha5YA/giphy.gif",
-         "https://media.giphy.com/media/N35rW3vRNeaDC/giphy.gif",
-         "https://media.giphy.com/media/lFmmcqA4VBhMQ/giphy.gif",
-         "https://media.giphy.com/media/kMkTJV4a32ba8/giphy.gif",
-         "https://media.giphy.com/media/12J6nIC1FJ7i00/giphy.gif",
-         "https://media.giphy.com/media/7JsQ5EQTZlgHe/giphy.gif",
-         "https://media.giphy.com/media/uG3lKkAuh53wc/giphy.gif",
-         "https://media.giphy.com/media/BSx6mzbW1ew7K/giphy.gif"
-];
+    console.log(imageIdecies)
   
-var total = images.length;
-var imageIdecies = new Array(total);
-console.log(imageIdecies);
-for (let i = 0; i < total; i++) { imageIdecies[i] = i; }
-console.log(imageIdecies);
     var currentSet = new Array(9);
     console.log(currentSet);
     resetIndecies();
@@ -98,7 +68,7 @@ console.log(imageIdecies);
     var imageIndex = 0;
     var nexImaget = 1;
   
-    resetStyles();
+     resetStyles();
     populateCells();
   
     function rotateCarousel() {
@@ -112,7 +82,7 @@ console.log(imageIdecies);
       swapPositionsBkwd();
       swapIndexBkwd();
       rotateCarousel();
-      resetStyles();
+       resetStyles();
       resetIndecies();
       swapPrevious();
       console.log(cells);
@@ -124,7 +94,7 @@ console.log(imageIdecies);
       swapPositionsFwd();
       swapIndexFwd();
       rotateCarousel();
-      resetStyles();
+       resetStyles();
       resetIndecies()
       console.log(cells);
       swapNext();
@@ -222,30 +192,28 @@ console.log(imageIdecies);
     function populateCells() {
       for (i = 0; i < cellCount; i++) {
         var current = document.createElement('div');
-        current.innerHTML = images[currentSet[i]];
+        current.innerHTML = htmlArray[currentSet[i]];
         cells[i].appendChild(current);
       }
     }
   
-    function swapPrevious() 
-    {
+    function swapPrevious() {
       var currentBacks = document.querySelectorAll(".reset");
       var pending = 0;
       if (currentBacks[pending].dataset.placement != "backR") { pending++; }
-      var currentImg = currentBacks[pending].getElementsByTagName("img");
-      console.log(currentImg);
-      currentImg[0].src = images[currentSet[5]];
+      var currentDiv = currentBacks[pending].getElementsByTagName("div");
+      console.log(currentDiv);
+      currentDiv[0].innerHTML = htmlArray[currentSet[5]];
     }
   
-    function swapNext() 
-    {
+     function swapNext() {
       var currentBacks = document.querySelectorAll(".reset");
       var pending = 0;
       if (currentBacks[pending].dataset.placement != "backL") { pending++; }
-      var currentImg = currentBacks[pending].getElementsByTagName("img");
-      console.log(currentImg);
-      currentImg[0].src = images[currentSet[4]];
+      var currentDiv = currentBacks[pending].getElementsByTagName("div");
+      console.log(currentDiv);
+      currentDiv[0].innerHTML = htmlArray[currentSet[4]];
     }
+  }
   
-  
-  //getApiImages()
+  getUploadImages()
